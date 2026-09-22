@@ -1,0 +1,9 @@
+{
+  "name": "SIE-EA Homepage API",
+  "status": "online",
+  "environment": "github-pages",
+  "mode": "static",
+  "version": "1.0.0",
+  "message": "SIE-EA 정적 API 서비스가 정상 작동 중입니다.",
+  "timestamp": "2026-09-23T00:00:00Z"
+}

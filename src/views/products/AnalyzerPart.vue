@@ -1,20 +1,28 @@
 <template>
-  <PageHeader title="Analyzer Part" description="고정밀 분석기 부품 및 모듈을 제공합니다." />
+  <PageHeader :title="pageTitle" :description="pageDescription" />
   <div class="main">
     <div class="section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Analyzer Part</h2>
-          <p class="section-description">고정밀 분석기 부품 및 모듈을 제공합니다.</p>
+          <h2 class="section-title">{{ pageTitle }}</h2>
+          <p class="section-description">{{ pageDescription }}</p>
         </div>
+
         <div class="row">
-          <div class="col-md-12">
-            <div class="card">
+          <div v-for="vendor in vendors" :key="vendor.name" class="col-lg-6 col-md-6 col-12 mb-4">
+            <div class="card vendor-card h-100">
               <div class="card-body">
-                <h4 class="card-title">분석기 부품</h4>
-                <p class="card-description">
-                  다양한 분석기에 사용되는 고품질 부품과 모듈을 공급합니다.
-                </p>
+                <div class="vendor-name">{{ vendor.name }}</div>
+                <h4 class="card-title">{{ vendor.category }}</h4>
+                <p class="card-description item-text">{{ vendor.items }}</p>
+                <a
+                  :href="vendor.website"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="vendor-link"
+                >
+                  {{ vendor.website }}
+                </a>
               </div>
             </div>
           </div>
@@ -25,12 +33,18 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
 import PageHeader from '@/components/PageHeader.vue'
 
-onMounted(() => {
-  // 페이지 로드 시 필요한 초기화 작업
-})
+const pageTitle = "Analyzer Part"
+const pageDescription = "SIE 취급 Analyzer 제품"
+const vendors = [
+  {
+    "name": "SERVOMEX",
+    "category": "Analyzer",
+    "items": "CEMS Analyzer\nO₂ Analyzer\nGas Chromatograph",
+    "website": "https://www.servomex.com"
+  }
+]
 </script>
 
 <style scoped>
@@ -50,5 +64,30 @@ onMounted(() => {
   font-size: 1.2rem;
   color: #666;
   margin-bottom: 40px;
+}
+
+.vendor-card {
+  height: 100%;
+  border: 1px solid #e4e7eb;
+}
+
+.vendor-name {
+  color: #0068d9;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.item-text {
+  white-space: pre-line;
+  line-height: 1.7;
+  min-height: 54px;
+}
+
+.vendor-link {
+  display: inline-block;
+  margin-top: 14px;
+  word-break: break-all;
+  font-weight: 600;
 }
 </style>

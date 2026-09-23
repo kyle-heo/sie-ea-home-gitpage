@@ -37,9 +37,7 @@
           </div>
           <hr />
           <div class="copyright">
-            <div class="pull-right">
-              © {{ new Date().getFullYear() }} SIE-EA. All Rights Reserved.
-            </div>
+            <div class="pull-right">© {{ new Date().getFullYear() }} SIE-EA. All Rights Reserved.</div>
           </div>
         </div>
       </div>
@@ -50,57 +48,16 @@
 <script setup></script>
 
 <style scoped>
-.footer-black {
-  background-color: #2c2c2c;
-  color: #ffffff;
-}
-
-.footer-big {
-  padding: 20px 0;
-}
-
-.footer-logo {
-  max-width: 150px;
-  margin-bottom: 20px;
-}
-
-.links {
-  margin-bottom: 20px;
-}
-
-.uppercase-links {
-  list-style: none;
-  padding-left: 0;
-}
-
-.uppercase-links li {
-  margin-bottom: 10px;
-}
-
-.uppercase-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.uppercase-links a:hover {
-  color: #a9a9a9;
-}
-
-.stacked-links li {
-  font-size: 14px;
-}
-
-.copyright {
-  font-size: 14px;
-  margin-top: 20px;
-}
-
-.pull-right {
-  float: right;
-}
-
-hr {
-  border-color: #444444;
-}
+.footer-black { background-color: #2c2c2c; color: #ffffff; }
+.footer-big { padding: 20px 0; }
+.footer-logo { max-width: 115px; margin-bottom: 20px; }
+.links { margin-bottom: 20px; }
+.uppercase-links { list-style: none; padding-left: 0; }
+.uppercase-links li { margin-bottom: 10px; }
+.uppercase-links a { color: #ffffff; text-decoration: none; font-weight: 600; }
+.uppercase-links a:hover { color: #a9a9a9; }
+.stacked-links li { font-size: 14px; }
+.copyright { font-size: 14px; margin-top: 20px; }
+.pull-right { float: right; }
+hr { border-color: #444444; }
 </style>

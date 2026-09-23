@@ -1,25 +1,28 @@
 <template>
-  <PageHeader
-    title="HVAC"
-    description="Heating, Ventilation, and Air Conditioning 시스템을 제공합니다."
-  />
+  <PageHeader :title="pageTitle" :description="pageDescription" />
   <div class="main">
     <div class="section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">HVAC</h2>
-          <p class="section-description">
-            Heating, Ventilation, and Air Conditioning 시스템을 제공합니다.
-          </p>
+          <h2 class="section-title">{{ pageTitle }}</h2>
+          <p class="section-description">{{ pageDescription }}</p>
         </div>
+
         <div class="row">
-          <div class="col-md-12">
-            <div class="card">
+          <div v-for="vendor in vendors" :key="vendor.name" class="col-lg-6 col-md-6 col-12 mb-4">
+            <div class="card vendor-card h-100">
               <div class="card-body">
-                <h4 class="card-title">HVAC 시스템</h4>
-                <p class="card-description">
-                  난방, 환기, 공기조화 시스템을 통한 최적의 환경 관리 솔루션을 제공합니다.
-                </p>
+                <div class="vendor-name">{{ vendor.name }}</div>
+                <h4 class="card-title">{{ vendor.category }}</h4>
+                <p class="card-description item-text">{{ vendor.items }}</p>
+                <a
+                  :href="vendor.website"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="vendor-link"
+                >
+                  {{ vendor.website }}
+                </a>
               </div>
             </div>
           </div>
@@ -30,12 +33,18 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
 import PageHeader from '@/components/PageHeader.vue'
 
-onMounted(() => {
-  // 페이지 로드 시 필요한 초기화 작업
-})
+const pageTitle = "HVAC"
+const pageDescription = "Explosion-proof HVAC 및 Air Conditioner"
+const vendors = [
+  {
+    "name": "GFUTEC",
+    "category": "HVAC for Explosion-proof Type",
+    "items": "HVAC for Explosion-proof Type\nAir Conditioner for Explosion-proof Type",
+    "website": "http://www.gfutec.com"
+  }
+]
 </script>
 
 <style scoped>
@@ -55,5 +64,30 @@ onMounted(() => {
   font-size: 1.2rem;
   color: #666;
   margin-bottom: 40px;
+}
+
+.vendor-card {
+  height: 100%;
+  border: 1px solid #e4e7eb;
+}
+
+.vendor-name {
+  color: #0068d9;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.item-text {
+  white-space: pre-line;
+  line-height: 1.7;
+  min-height: 54px;
+}
+
+.vendor-link {
+  display: inline-block;
+  margin-top: 14px;
+  word-break: break-all;
+  font-weight: 600;
 }
 </style>

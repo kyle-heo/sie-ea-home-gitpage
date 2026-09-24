@@ -5,7 +5,10 @@
   "type": "module",
   "description": "SIE-EA Official Website (GitHub Pages)",
   "scripts": {
+    "prepare:headers": "node scripts/prepare-header-images.mjs",
+    "predev": "npm run prepare:headers",
     "dev": "vite",
+    "prebuild": "npm run prepare:headers",
     "build": "vite build",
     "preview": "vite preview",
     "server": "node server/server.js",

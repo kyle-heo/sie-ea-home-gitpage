@@ -21,13 +21,13 @@ const imageUrl = computed(() => {
   if (path.startsWith('/about')) {
     return getAssetUrl('assets/img/sieea/company/company-background.jpg')
   } else if (path.startsWith('/business')) {
-    return getAssetUrl('assets/img/sieea/si-business-1.webp')
+    return getAssetUrl('assets/img/sieea/header-business.webp')
   } else if (path.startsWith('/products')) {
-    return getAssetUrl('assets/img/sieea/products-1.webp')
+    return getAssetUrl('assets/img/sieea/header-products.webp')
   } else if (path.startsWith('/resources')) {
-    return getAssetUrl('assets/img/sieea/dataroom-1.webp')
+    return getAssetUrl('assets/img/sieea/header-resources.webp')
   } else if (path.startsWith('/customer-support')) {
-    return getAssetUrl('assets/img/sieea/customer-center-1.webp')
+    return getAssetUrl('assets/img/sieea/header-customer-support.webp')
   }
   return getAssetUrl('assets/img/header.jpg')
 })

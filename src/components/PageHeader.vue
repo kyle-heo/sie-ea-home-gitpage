@@ -36,6 +36,7 @@ const imageUrl = computed(() => {
 <style scoped>
 .page-header {
   background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 

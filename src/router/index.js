@@ -122,11 +122,6 @@ const routes = [
     component: () => import('../views/customer-support/Inquiry.vue'),
   },
   {
-    path: '/customer-support/admin',
-    name: 'Admin',
-    component: () => import('../views/customer-support/Admin.vue'),
-  },
-  {
     path: '/error',
     name: 'Error',
     component: () => import('../views/ErrorPage.vue'),

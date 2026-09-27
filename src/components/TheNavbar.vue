@@ -247,14 +247,6 @@
                   >문의하기</router-link
                 >
               </li>
-              <li>
-                <router-link
-                  to="/customer-support/admin"
-                  class="dropdown-item"
-                  @click="closeAllDropdowns"
-                  >관리자 권한</router-link
-                >
-              </li>
             </ul>
           </li>
         </ul>
